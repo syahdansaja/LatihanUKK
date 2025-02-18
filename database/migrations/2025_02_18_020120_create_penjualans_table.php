@@ -17,7 +17,7 @@ return new class extends Migration
             $table->decimal("TotalHarga", 10,2)->default(0);
             $table->unsignedBigInteger("PelangganID");
 
-            $table->foreign("PelangganID")->references("PelangganID")->on("pelanggans");
+            $table->foreign("PelangganID")->references("PelangganID")->on("pelanggans")->onDelete("cascade")->onUpdate("restrict");
         });
     }
 

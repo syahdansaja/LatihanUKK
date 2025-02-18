@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer("JumlahProduk");
             $table->decimal("Subtotal", 10, 2);
 
-            $table->foreign("PenjualanID")->references('PenjualanID')->on("penjualans");
-            $table->foreign("ProdukID")->references("ProdukID")->on("produks");
+            $table->foreign("PenjualanID")->references('PenjualanID')->on("penjualans")->onUpdate("restrict")->onDelete("cascade");
+            $table->foreign("ProdukID")->references("ProdukID")->on("produks")->onDelete("cascade")->onUpdate("restrict");
         });
     }
 

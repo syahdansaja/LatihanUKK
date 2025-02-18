@@ -42,9 +42,16 @@ class DatabaseSeeder extends Seeder
             "JumlahProduk" => 2,
             "Subtotal" => $produk->Harga * 2
         ]);
+        $detail2 = $penjualan->detailPenjualans()->create([
+            "ProdukID" => $produk->ProdukID,
+            "JumlahProduk" => 3,
+            "Subtotal" => $produk->Harga * 3
+        ]);
         $penjualan->TotalHarga = $penjualan->TotalHarga + $detail->Subtotal;
+        $penjualan->TotalHarga = $penjualan->TotalHarga + $detail2->Subtotal;
         $penjualan->save();
         $produk->Stok = $produk->Stok - $detail->JumlahProduk;
+        $produk->Stok = $produk->Stok - $detail2->JumlahProduk;
         $produk->save();
     }
 }
