@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             "Stok" => 10
         ]);
         $detail = $penjualan->detailPenjualans()->create([
-            "ProdukID" => $produk->id,
+            "ProdukID" => $produk->ProdukID,
             "JumlahProduk" => 2,
             "Subtotal" => $produk->Harga * 2
         ]);
