@@ -6,5 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pelanggan extends Model
 {
-    //
+    protected $table = "pelanggans";
+    protected $id =  "PelangganID";
+    public $timestamps = false;
+    protected $fillable = [
+        "NamaPelanggan",
+        "Alamat",
+        "NomorTelepon"
+    ];
+    public function penjualans () {
+        return $this->hasMany(Penjualan::class, "PelangganID");
+    }
 }
