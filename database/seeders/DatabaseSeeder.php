@@ -2,9 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Pelanggan;
 use App\Models\User;
+use App\Models\DetailPenjualan;
+use App\Models\Produk;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,9 +19,32 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+        $pelanggan = Pelanggan::create([
+            "NamaPelanggan" => "Syahdan",
+            "Alamat" => "Kalibeber",
+            "NomorTelepon" => "081234567890"
         ]);
+        $penjualan = $pelanggan->penjualans()->create([
+            "TanggalPenjualan" => Date::now(),
+            "TotalHarga" => 0
+        ]);
+        $produk = Produk::create([
+            "NamaProduk" => "Mouse Logitech",
+            "Harga" => 100000,
+            "Stok" => 10
+        ]);
+        $detail = $penjualan->detailPenjualans()->create([
+            "ProdukID" => $produk->id,
+            "JumlahProduk" => 2,
+            "Subtotal" => $produk->Harga * 2
+        ]);
+        $penjualan->TotalHarga = $penjualan->TotalHarga + $detail->Subtotal;
+        $penjualan->save();
+        $produk->Stok = $produk->Stok - $detail->JumlahProduk;
+        $produk->save();
     }
 }
