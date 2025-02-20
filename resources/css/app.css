@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .btn {
-    @apply rounded-xl py-2 px-4 text-xl font-semibold;
+    @apply rounded-xl py-2 px-4 text-xl font-semibold cursor-pointer;
 }

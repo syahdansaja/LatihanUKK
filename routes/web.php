@@ -25,5 +25,8 @@ Route::prefix("/pelanggan")->group(function () {
 
 Route::prefix("/penjualan")->group(function () {
     Route::get("", [TransactionController::class, "index"]);
+    Route::get("/create", [Transactioncontroller::class, "createTransactionIndex"]);
+    // Route::get("/{id}/details", [TransactionController::class, "transactionDetails"]);
+    Route::post("/create", [TransactionController::class, "createTransaction"]);
 });
 
