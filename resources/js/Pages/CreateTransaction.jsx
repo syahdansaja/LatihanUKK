@@ -22,11 +22,16 @@ export default function CreateTransaction () {
         })
     }
     const handleAddRow = () => {
-        return (
-            <tr>
+        const table = document.getElementById("table-details");
+        const row = table.insertRow();
 
-            </tr>
-        )
+        row.innerHTML =
+    }
+    const handleDeleteRow = () => {
+        document.getElementById
+    }
+    const [searchTerm , setSearchTerm] = useState("");
+    const handleProductSearch = () => {
     }
     return (
         <>
@@ -51,7 +56,7 @@ export default function CreateTransaction () {
                         <th className="py-1 px-3 text-lg font-semibold text-center" style={{ borderRadius: "0px 5px 0px 0px"}}>Action</th>
                     </tr>
                 </thead>
-                <tbody className>
+                <tbody className="">
 
                 </tbody>
             </table>
