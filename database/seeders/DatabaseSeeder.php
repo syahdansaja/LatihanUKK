@@ -37,6 +37,11 @@ class DatabaseSeeder extends Seeder
             "Harga" => 100000,
             "Stok" => 10
         ]);
+        $produk2 = Produk::create([
+            "NamaProduk" => "Keyboard mechanical",
+            "Harga" => 300000,
+            "Stok" => 3
+        ]);
         $detail = $penjualan->detailPenjualans()->create([
             "ProdukID" => $produk->ProdukID,
             "JumlahProduk" => 2,

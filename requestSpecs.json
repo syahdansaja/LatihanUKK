@@ -1,0 +1,15 @@
+// Request specs and validation for transaction
+{
+    "PelangganID": 1, // required . integer, ada di dalam database
+    "TanggalTransaksi": "dd-MM-yyyy", // required . format tanggal yang sesuai
+    "detailtrasnsaksi": [
+        {
+            "ProdukID": 1, // check existing in database without looping (database overhead risk)
+            "jumlahbarang": 1 // check and compare with "stok" field in database (jumlah barang <= Stok)
+        },
+        {
+            "ProdukID": 2,
+            "jumlahbarang": 1
+        }
+    ]
+}
