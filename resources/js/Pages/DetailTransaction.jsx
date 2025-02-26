@@ -24,6 +24,9 @@ export default function DetailTransaction () {
             <div className="my-2 px-3">
                 <span className="text-xl font-extrabold">Barang yang di beli</span>
             </div>
+            <table className="rounded-lg border border-gray-900 table">
+                <thead className="table-header-group"></thead>
+            </table>
           </section>
         </>
     )
