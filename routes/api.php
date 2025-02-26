@@ -8,4 +8,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post("/test", [TransactionController::class , "createTransaction"]);
+// Route::post("/test", [TransactionController::class , "createTransaction"]);
+// Route::get("/test/{id}", [TransactionController::class ,"getTransactionDetails"]);
+// Route::delete("test/{id}", [TransactionController::class,"deleteTransaction"]);

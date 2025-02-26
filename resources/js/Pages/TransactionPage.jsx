@@ -31,7 +31,7 @@ export default function TransactionPage () {
                             <td className="px-1 py-2 text-center">{transaksi.pelanggan.NamaPelanggan}</td>
                             <td className="px-3 py-2 text-center">Rp. {transaksi.TotalHarga},00</td>
                             <td className="flex justify-center gap-2 py-2">
-
+                                <Link className="rounded-md px-4 py-2 shadow-lg text-sm font-semibold bg-yellow-500" href={"/penjualan/" + transaksi.PenjualanID + "/details"}>DETAILS</Link>
                             </td>
                         </tr>
                     )) : (

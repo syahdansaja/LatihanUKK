@@ -46,9 +46,10 @@ export default function CreateTransaction () {
         const row = table.insertRow();
 
         row.innerHTML = `
-          <td style="justify-items: center; text-align: center;">kontol</td>
-
-
+          <td style="justify-items: center; text-align: center;">No</td>
+          <td style="justify-items:center; text-align:center;">
+             <input style="" />
+          </td>
         `
     }
     const handleDeleteRow = () => {
