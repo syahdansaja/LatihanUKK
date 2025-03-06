@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransactionController;
+use App\Models\Penjualan;
 
 Route::get("/", [IndexController::class, "index"]);
 
@@ -26,8 +27,8 @@ Route::prefix("/pelanggan")->group(function () {
 Route::prefix("/penjualan")->group(function () {
     Route::get("", [TransactionController::class, "index"]);
     Route::get("/create", [Transactioncontroller::class, "createTransactionIndex"]);
-    // Route::get("/{id}/details", [TransactionController::class, "transactionDetails"]);
     Route::post("/create", [TransactionController::class, "createTransaction"]);
     Route::get("/{id}/details", [TransactionController::class, "getTransactionDetails"]);
+    Route::get("/{id}/print", [TransactionController::class, "printTransaction"]);
 });
 

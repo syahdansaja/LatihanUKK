@@ -1,5 +1,5 @@
 import { Link, router, usePage } from "@inertiajs/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Layouts/Navbar";
 export default function TransactionPage () {
     const transactions = usePage().props.transactions;
